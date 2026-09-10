@@ -510,10 +510,12 @@
     }
 
     .verse-hanja-row {
-      display: flex;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
       gap: 8px;
-      flex-wrap: wrap;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
     }
 
     /* Individual Hanja Word Block */
@@ -521,7 +523,7 @@
       background: #FFFFFF;
       border: 1.5px solid #D5C6B0;
       border-radius: 10px;
-      width: 52px;
+      width: 100%;
       height: 64px;
       display: flex;
       flex-direction: column;
@@ -529,6 +531,8 @@
       justify-content: center;
       cursor: pointer;
       user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
       box-shadow: 0 2px 5px rgba(0,0,0,0.04);
       transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
       position: relative;
@@ -757,14 +761,16 @@
     }
 
     .slots-row {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
       gap: 8px;
-      justify-content: center;
-      flex-wrap: wrap;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
     }
 
     .slot-box {
-      width: 54px;
+      width: 100%;
       height: 66px;
       border: 2px dashed #C8B89F;
       border-radius: 12px;
@@ -777,6 +783,9 @@
       position: relative;
       transition: all 0.2s ease;
       box-shadow: inset 0 2px 4px rgba(0,0,0,0.03);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
     }
 
     .slot-box.filled {
@@ -837,15 +846,17 @@
     }
 
     .pool-blocks-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
       min-height: 72px;
     }
 
     .pool-block {
-      width: 52px;
+      width: 100%;
       height: 64px;
       background: #FFFFFF;
       border: 1.5px solid #D5C6B0;
@@ -858,6 +869,8 @@
       box-shadow: 0 3px 6px rgba(0,0,0,0.06);
       transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
       user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
     }
 
     .pool-block:hover {
@@ -1352,49 +1365,223 @@
       cursor: pointer;
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
+    /* Handle bar for Mobile Bottom Sheet */
+    .modal-handle-bar {
+      display: none;
+      width: 42px;
+      height: 4.5px;
+      background: #D5C8B4;
+      border-radius: 99px;
+      margin: 10px auto 4px auto;
+    }
+
+    .swipe-hint-pill {
+      display: none;
+      font-size: 0.72rem;
+      color: var(--gold-point);
+      background: var(--gold-light);
+      padding: 3px 8px;
+      border-radius: 99px;
+      font-weight: 700;
+      border: 1px solid #ECD7A5;
+    }
+
+    /* Responsive: Comprehensive Mobile Optimization */
+    @media (max-width: 640px) {
+      body {
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px);
+      }
       .app-container {
-        padding: 8px 10px 70px 10px;
+        padding: 6px 10px 85px 10px;
+        gap: 10px;
       }
       header.app-header {
-        padding: 12px 14px;
+        padding: 10px 12px;
+        top: 0;
+        border-radius: 0 0 16px 16px;
+      }
+      .brand-seal {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+        border-radius: 8px;
       }
       .brand-titles h1 {
-        font-size: 1.02rem;
+        font-size: 0.98rem;
+      }
+      .brand-titles p {
+        font-size: 0.72rem;
+      }
+      .btn-icon-round {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+      }
+      .poem-selector-bar {
+        padding: 4px;
+        gap: 4px;
       }
       .btn-poem-choice {
         font-size: 0.76rem;
-        padding: 7px 4px;
+        padding: 8px 4px;
+        gap: 4px;
+      }
+      .btn-poem-choice .badge-hanja {
+        padding: 1px 5px;
+        font-size: 0.72rem;
+      }
+      nav.mode-nav {
+        gap: 4px;
+        padding: 4px;
+      }
+      .nav-tab-btn {
+        font-size: 0.76rem;
+        padding: 7px 2px;
+      }
+      .nav-tab-btn .tab-icon {
+        font-size: 1.05rem;
+      }
+      .swipe-hint-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .step-pills-bar {
+        padding: 6px 10px;
+        margin-bottom: 8px;
+      }
+      .step-pill {
+        padding: 5px 10px;
+        font-size: 0.78rem;
+      }
+      .scene-card {
+        border-radius: 16px;
+      }
+      .scene-body {
+        padding: 14px 12px;
+        gap: 12px;
+      }
+      .scene-title-group h2 {
+        font-size: 1.15rem;
+      }
+      .brain-association-box {
+        font-size: 0.82rem;
+        padding: 8px 10px;
+        line-height: 1.5;
+      }
+      .masking-toolbar {
+        padding: 6px 10px;
+        gap: 6px;
+      }
+      .btn-mask {
+        padding: 5px 8px;
+        font-size: 0.74rem;
+      }
+      .verse-line-box {
+        padding: 10px 8px;
+        gap: 8px;
+      }
+      .verse-hanja-row, .slots-row, .pool-blocks-row {
+        gap: 5px;
       }
       .hanja-block {
-        width: 46px;
         height: 58px;
+        border-radius: 8px;
       }
       .hanja-block .h-char {
-        font-size: 1.38rem;
+        font-size: 1.35rem;
+      }
+      .hanja-block .h-sound {
+        font-size: 0.68rem;
+      }
+      .verse-meaning-row {
+        font-size: 0.86rem;
+      }
+      .couplet-meaning-card {
+        padding: 10px 12px;
+        font-size: 0.86rem;
+      }
+      .scene-controls {
+        gap: 6px;
+      }
+      .btn-nav-step {
+        padding: 9px 12px;
+        font-size: 0.82rem;
+      }
+      .btn-read-verse {
+        padding: 11px 16px;
+        font-size: 0.88rem;
+        min-width: 140px;
+      }
+      /* Quiz Mobile */
+      .quiz-container {
+        padding: 14px 12px;
+        gap: 14px;
       }
       .slot-box {
-        width: 46px;
         height: 58px;
+        border-radius: 8px;
       }
       .slot-char {
-        font-size: 1.4rem;
+        font-size: 1.35rem;
+      }
+      .slot-hint-sound {
+        font-size: 0.68rem;
       }
       .pool-block {
-        width: 46px;
         height: 58px;
+        border-radius: 8px;
       }
       .pool-char {
-        font-size: 1.38rem;
+        font-size: 1.35rem;
+      }
+      .pool-sound {
+        font-size: 0.68rem;
+      }
+      /* Chant Mobile */
+      .chant-container {
+        padding: 14px 12px;
+        gap: 12px;
       }
       .chant-mini-thumb {
         width: 52px;
         height: 52px;
       }
       .chant-hanja-line {
-        font-size: 1.05rem;
+        font-size: 1.02rem;
+        letter-spacing: 1px;
       }
+      .chant-sound-line {
+        font-size: 0.82rem;
+      }
+      .chant-meaning-line {
+        font-size: 0.78rem;
+      }
+      /* Native Mobile Bottom Sheet for Modal */
+      .modal-backdrop {
+        align-items: flex-end;
+        padding: 0;
+      }
+      .modal-dialog {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 22px 22px 0 0;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+        box-shadow: 0 -8px 30px rgba(0,0,0,0.2);
+        padding-bottom: max(env(safe-area-inset-bottom, 14px), 14px);
+        animation: slideUpSheet 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .modal-handle-bar {
+        display: block;
+      }
+    }
+
+    @keyframes slideUpSheet {
+      from { transform: translateY(100%); opacity: 0.6; }
+      to { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
@@ -1468,9 +1655,12 @@
         <div class="step-pills-group" id="stepPillsGroup">
           <!-- Populated by JS -->
         </div>
-        <span id="stepCounterText" style="font-size: 0.82rem; font-weight: 700; color: var(--gold-point);">
-          1 / 4
-        </span>
+        <div style="display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
+          <span class="swipe-hint-pill" id="swipeHintPill">👈 넘기기 👉</span>
+          <span id="stepCounterText" style="font-size: 0.82rem; font-weight: 700; color: var(--gold-point);">
+            1 / 4
+          </span>
+        </div>
       </div>
 
       <!-- Main Scene Card -->
@@ -1706,6 +1896,7 @@
   <!-- Hanja Detail Modal Dialog (Chunking Tooltip) -->
   <div class="modal-backdrop" id="hanjaModalBackdrop">
     <div class="modal-dialog">
+      <div class="modal-handle-bar"></div>
       <div class="modal-top-bar">
         <h3>글자 돋보기 (Chunking)</h3>
         <button class="btn-close-modal" id="btnCloseHanjaModal">&times;</button>
@@ -2433,6 +2624,15 @@
 
     const tts = new SpeechEngine();
 
+    /* Mobile Haptic Feedback Helper */
+    function vibrate(ms = 20) {
+      if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
+        try {
+          navigator.vibrate(ms);
+        } catch (e) {}
+      }
+    }
+
     /* ==========================================================
        4. State Management
        ========================================================== */
@@ -2593,6 +2793,7 @@
         `;
 
         block.addEventListener('click', () => {
+          vibrate(15);
           sound.playTap();
           if (block.classList.contains('blinded')) {
             block.classList.remove('blinded');
@@ -2684,6 +2885,7 @@
     /* Step Navigation */
     btnPrevStep.addEventListener('click', () => {
       if (currentStep > 1) {
+        vibrate(20);
         sound.playTap();
         loadStep(currentStep - 1);
       }
@@ -2691,10 +2893,49 @@
     btnNextStep.addEventListener('click', () => {
       const poem = getCurrentPoem();
       if (currentStep < poem.steps.length) {
+        vibrate(20);
         sound.playTap();
         loadStep(currentStep + 1);
       }
     });
+
+    /* Mobile Touch Swipe Gesture on Scene Card */
+    let touchStartX = 0;
+    let touchStartY = 0;
+    const sceneCardEl = document.getElementById('mainSceneCard');
+
+    sceneCardEl.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    sceneCardEl.addEventListener('touchend', (e) => {
+      if (e.changedTouches.length === 1) {
+        const deltaX = e.changedTouches[0].clientX - touchStartX;
+        const deltaY = e.changedTouches[0].clientY - touchStartY;
+        // Check horizontal swipe with minimum threshold and angle limit
+        if (Math.abs(deltaX) > 45 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
+          const poem = getCurrentPoem();
+          if (deltaX < 0) {
+            // Swiped left -> Next step
+            if (currentStep < poem.steps.length) {
+              vibrate(25);
+              sound.playTap();
+              loadStep(currentStep + 1);
+            }
+          } else {
+            // Swiped right -> Prev step
+            if (currentStep > 1) {
+              vibrate(25);
+              sound.playTap();
+              loadStep(currentStep - 1);
+            }
+          }
+        }
+      }
+    }, { passive: true });
 
     /* Speak Verse Button */
     btnSpeakScene.addEventListener('click', () => {
@@ -2787,6 +3028,7 @@
             <div class="slot-hint-sound">${item.sound}</div>
           `;
           slotEl.addEventListener('click', () => {
+            vibrate(15);
             sound.playTap();
             returnBlockToPool(slotIdx);
           });
@@ -2818,6 +3060,7 @@
 
         block.addEventListener('click', () => {
           if (item.used) return;
+          vibrate(15);
           sound.playTap();
           putBlockInNextSlot(poolIdx);
         });
@@ -2880,6 +3123,7 @@
       });
 
       if (allCorrect) {
+        vibrate([40, 60, 80]);
         sound.playCelebration();
         launchConfetti();
         showToast(`🎉 축하합니다! 제${quizCurrentStep}련을 완벽하게 맞췄어요!`);
@@ -2891,6 +3135,7 @@
           }
         }, 2200);
       } else {
+        vibrate([80, 50, 80]);
         sound.playError();
         showToast("틀린 글자가 있어요! 붉은 칸을 탭해서 다시 맞춰보세요.");
       }

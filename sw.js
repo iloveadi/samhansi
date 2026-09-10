@@ -1,5 +1,5 @@
 // Service Worker for 최치원 오언시 눈도장 한시 암기 PWA
-const CACHE_NAME = 'choi-chiwon-poems-v3';
+const CACHE_NAME = 'choi-chiwon-poems-v4';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -26,7 +26,7 @@ const ASSETS_TO_CACHE = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[Service Worker] Pre-caching offline assets for all 3 poems');
+      console.log('[Service Worker] Pre-caching offline assets for all 3 poems (v4)');
       return cache.addAll(ASSETS_TO_CACHE).catch((err) => {
         console.warn('[Service Worker] Caching error:', err);
       });
@@ -51,16 +51,33 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
-  
+
+  const url = new URL(event.request.url);
+
+  // Network-first for HTML / navigation so updates apply immediately
+  if (event.request.mode === 'navigate' || url.pathname.endsWith('.html') || url.pathname.endsWith('/')) {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          const resClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, resClone));
+          return networkResponse;
+        })
+        .catch(() => caches.match(event.request).then(cached => cached || caches.match('./index.html')))
+    );
+    return;
+  }
+
+  // Cache-first for images and other static assets
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
+      if (cachedResponse) return cachedResponse;
       return fetch(event.request).then((networkResponse) => {
+        if (networkResponse && networkResponse.status === 200) {
+          const resClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, resClone));
+        }
         return networkResponse;
-      }).catch(() => {
-        return caches.match('./index.html');
       });
     })
   );
