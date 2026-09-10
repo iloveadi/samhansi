@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="skyGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4B779A"/>
+      <stop offset="40%" stop-color="#91B3CD"/>
+      <stop offset="75%" stop-color="#E5EFF5"/>
+      <stop offset="100%" stop-color="#F9F6EE"/>
+    </linearGradient>
+    <linearGradient id="peak1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6F8D88"/>
+      <stop offset="100%" stop-color="#A9C2BA"/>
+    </linearGradient>
+    <linearGradient id="peak2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3D5A50"/>
+      <stop offset="100%" stop-color="#6C877E"/>
+    </linearGradient>
+    <linearGradient id="peak3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#243A32"/>
+      <stop offset="100%" stop-color="#3F584F"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clear vast open sky -->
+  <rect width="1200" height="675" fill="url(#skyGrad2)"/>
+
+  <!-- Distant Golden Horizon Glow -->
+  <ellipse cx="600" cy="400" rx="600" ry="120" fill="#FCEBD2" opacity="0.6"/>
+
+  <!-- Thousand Mountain Peaks Layer 1 (Far - 千山) -->
+  <path d="M0 430 L 70 380 L 140 430 L 230 360 L 340 440 L 460 350 L 580 430 L 690 340 L 810 425 L 940 360 L 1060 420 L 1150 370 L 1200 410 L 1200 675 L 0 675 Z" fill="url(#peak1)" opacity="0.5"/>
+
+  <!-- Thousand Mountain Peaks Layer 2 (Mid - 千山分掌上) -->
+  <path d="M0 480 L 110 400 L 220 470 L 360 380 L 510 480 L 650 390 L 780 475 L 910 400 L 1040 470 L 1160 410 L 1200 440 L 1200 675 L 0 675 Z" fill="url(#peak2)" opacity="0.75"/>
+
+  <!-- Thousand Mountain Peaks Layer 3 (Closer) -->
+  <path d="M0 540 L 160 440 L 320 530 L 490 430 L 680 540 L 860 450 L 1020 530 L 1200 460 L 1200 675 L 0 675 Z" fill="url(#peak3)" opacity="0.9"/>
+
+  <!-- Floating cloud bands dividing the ridges like waves -->
+  <path d="M50 460 Q 250 420 500 460 T 950 435 Q 1100 440 1200 455" fill="none" stroke="#FFFFFF" stroke-width="20" opacity="0.8"/>
+  <path d="M-20 515 Q 300 480 600 520 T 1150 495" fill="none" stroke="#FFFFFF" stroke-width="16" opacity="0.7"/>
+
+  <!-- Foreground High Summit Platform where Scholar stands (萬事豁胷中) -->
+  <path d="M250 675 Q 450 560 700 560 Q 950 560 1150 675 Z" fill="#202A24"/>
+  <ellipse cx="700" cy="570" rx="360" ry="40" fill="#35443A"/>
+
+  <!-- Scholar Boy standing with arms wide open, chest puffed out, enjoying the vast mountain breeze (豁胷中) -->
+  <g transform="translate(670, 460) scale(1.15)">
+    <!-- Robe Body -->
+    <path d="M10 50 L -8 110 L 48 110 L 30 50 Z" fill="#FFFFFF" stroke="#3A463E" stroke-width="2"/>
+    <!-- Blue Belt / Sashes blowing freely in wind -->
+    <rect x="8" y="60" width="24" height="6" fill="#1E3A5F"/>
+    <path d="M12 66 Q 0 85 -18 95" fill="none" stroke="#1E3A5F" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M16 66 Q 5 90 -10 105" fill="none" stroke="#B93826" stroke-width="3" stroke-linecap="round"/>
+    <!-- Wide Open Arms welcoming the world (豁) -->
+    <path d="M12 52 L -35 38 L -33 30 L 10 46 Z" fill="#FFFFFF" stroke="#3A463E" stroke-width="1.8"/> <!-- Left arm -->
+    <path d="M28 52 L 75 38 L 73 30 L 30 46 Z" fill="#FFFFFF" stroke="#3A463E" stroke-width="1.8"/> <!-- Right arm -->
+    <circle cx="-35" cy="34" r="5" fill="#E8B896"/>
+    <circle cx="75" cy="34" r="5" fill="#E8B896"/>
+    <!-- Head & Exhilarated Face looking at horizon -->
+    <circle cx="20" cy="32" r="14" fill="#E8B896"/>
+    <!-- Scholar Cap (Bokgeon 복건) with ribbons blowing in wind -->
+    <path d="M8 28 Q 20 16 32 28 L 30 18 Q 20 12 10 18 Z" fill="#1C1D1F"/>
+    <rect x="17" y="10" width="6" height="8" fill="#1C1D1F" rx="2"/>
+    <path d="M10 24 Q -10 20 -25 15" fill="none" stroke="#1C1D1F" stroke-width="3" stroke-linecap="round"/>
+    <!-- Smiling open mouth, bright eyes -->
+    <circle cx="24" cy="29" r="2" fill="#1C1D1F"/>
+    <path d="M22 36 Q 26 40 30 36" fill="none" stroke="#B93826" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Big Stylized Palm Outline Overlay (Visual Metaphor: 分掌上 - 손바닥 위의 산들) -->
+  <g opacity="0.22" stroke="#B4842E" stroke-width="3" fill="none">
+    <path d="M500 580 C 460 480, 480 370, 520 330 C 535 310, 560 325, 555 355 C 550 400, 580 300, 615 285 C 635 275, 650 295, 645 330 C 640 380, 675 295, 710 295 C 730 295, 740 315, 730 350 C 720 400, 765 340, 795 350 C 815 360, 810 385, 785 425 C 750 480, 780 580, 700 620 Z"/>
+  </g>
+
+  <!-- Seal -->
+  <rect x="1100" y="45" width="55" height="55" fill="#B93826" rx="8"/>
+  <text x="1127" y="80" font-family="'Noto Serif KR', serif" font-size="28" font-weight="900" fill="#FFFFFF" text-anchor="middle">掌</text>
+  <text x="1127" y="125" font-family="'Gowun Batang', serif" font-size="16" font-weight="700" fill="#3D5A50" text-anchor="middle">千山</text>
+</svg>

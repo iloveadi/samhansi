@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>최치원 오언시 눈도장 한시 암기 - 우흥 · 촉규화 · 강남녀 PWA</title>
-  <meta name="description" content="최치원의 명시 <우흥(寓興)>, <촉규화(蜀葵花)>, <강남녀(江南女)>를 시각적 눈도장 장면 연상과 리드미컬한 챈트로 쉽고 재미있게 외우는 인터랙티브 한시 학습 PWA">
+  <title>최치원 오언시 눈도장 한시 암기 - 우흥 · 촉규화 · 강남녀 · 제운봉사 PWA</title>
+  <meta name="description" content="최치원의 명시 <우흥(寓興)>, <촉규화(蜀葵花)>, <강남녀(江南女)>, <제운봉사(題雲峯寺)>를 시각적 눈도장 장면 연상과 리드미컬한 챈트로 쉽고 재미있게 외우는 인터랙티브 한시 학습 PWA">
   <meta name="theme-color" content="#3C483F">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/svg+xml" href="assets/images/icon.svg">
@@ -163,10 +163,10 @@
       border-color: var(--sage-primary);
     }
 
-    /* Poem Selector Bar (우흥 vs 촉규화 vs 강남녀) */
+    /* Poem Selector Bar (우흥 vs 촉규화 vs 강남녀 vs 제운봉사) */
     .poem-selector-bar {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 6px;
       background: #EFE8DC;
       padding: 6px;
@@ -1419,6 +1419,7 @@
         font-size: 0.95rem;
       }
       .poem-selector-bar {
+        grid-template-columns: repeat(2, 1fr);
         padding: 4px;
         gap: 4px;
       }
@@ -1623,6 +1624,10 @@
       <button class="btn-poem-choice" id="btnPoemGangnam" data-poem="gangnam">
         <span class="badge-hanja">女</span>
         <span>3. 강남녀 (江南女)</span>
+      </button>
+      <button class="btn-poem-choice" id="btnPoemWunbong" data-poem="wunbong">
+        <span class="badge-hanja">峯</span>
+        <span>4. 제운봉사 (題雲峯寺)</span>
       </button>
     </div>
 
@@ -2463,6 +2468,158 @@
             prompt: "Thoughtful and poetic East Asian ink-wash illustration. Twilight settling over the town. The humble weaving girl looks up from her wooden loom toward the evening stars with a serene, proud, dignified smile, her hands honest and hardworking. In the background, the shadowy outline of the proud girl realizing the fleeting nature of vanity --ar 16:9"
           }
         ]
+      },
+      wunbong: {
+        id: "wunbong",
+        title: "제운봉사 (題雲峯寺)",
+        sealChar: "峯",
+        subtitle: "오언율시(五言律詩) · 시각 연상과 리듬 챈트",
+        storyHeader: "최치원 선생과 <제운봉사(題雲峯寺)> 이야기",
+        storySubheader: "구름 솟은 산사에서 바라본 맑은 세상과 호연지기(浩然之氣)",
+        storyBackground: "<strong>'제목 제(題)'</strong>, <strong>'구름 운(雲)'</strong>, <strong>'봉우리 봉(峯)'</strong>, <strong>'절 사(寺)'</strong>를 써서, '구름에 닿을 듯 드높은 운봉사 절벽에 올라 지은 시'라는 뜻이에요. 가파른 칡넝쿨을 잡고 천 길 벼랑 끝에 올라 <strong>끝없이 펼쳐진 산봉우리(千山)</strong>를 손바닥 위에 올려놓듯 내려다보며, 가슴속의 온갖 번뇌를 시원하게 씻어내는 선비의 호방한 기상을 담고 있답니다.",
+        storyLesson: "1. <strong>포기하지 않고 오르기(捫葛):</strong> 가파른 비탈길도 튼튼한 칡넝쿨을 잡고 땀 흘려 오르면, 마침내 구름보다 높은 멋진 세상을 만날 수 있어요.<br>2. <strong>넓은 마음 갖기(萬事豁):</strong> 높은 곳에서 내려다보면 아등바등 다투던 일들이 손바닥만 한 작은 일에 불과해요. 넓고 시원한 호연지기를 품어요.<br>3. <strong>맑은 소리와 눈빛(塔影·松聲):</strong> 눈부신 햇살 속의 단아한 탑과 하늘을 울리는 솔바람 소리처럼, 내 마음도 언제나 맑고 씩씩하게 가꿔요.<br>4. <strong>일상의 책임(廻步):</strong> 자연의 아름다움을 마음 깊이 새기되, 다시 일상으로 돌아와 내게 주어진 소중한 하루하루를 성실하게 살아가요.",
+        steps: [
+          {
+            step: 1,
+            title: "제1연 (수련 首聯)",
+            subtitle: "칡넝쿨 잡고 구름 봉우리에 오르니 온 세상이 텅 비어 맑다",
+            keyword: "칡넝쿨 & 구름 봉우리",
+            image: "assets/images/wunbong1.svg",
+            prompt: "Traditional East Asian ink-wash illustration, storybook style for children. A high misty mountain peak above sea of clouds with ancient Korean Buddhist temple Cloud Peak Temple, a young Korean scholar boy climbing holding wild ivy vines. Soft warm atmospheric colors, poetic, gentle light, high quality picture book illustration.",
+            storyExplanation: "<strong>🔑 눈도장 장면 연상 포인트:</strong> 굵은 칡넝쿨을 밧줄처럼 굳세게 휘어잡고 구름 솟은 절벽을 오르는 선비 아이의 모습이에요! 마침내 운봉사에 올라 세상을 내려다보니, 구름바다 아래 온갖 잡념이 맑은 허공처럼 깨끗하게 비워집니다.",
+            fullMeaning: "칡넝쿨을 휘어잡고 구름 봉우리에 오르니, 평평하게 바라보는 온 세상이 텅 비어 맑구나.",
+            soundLine: "문갈상운봉 평관세계공",
+            line1: {
+              hanja: "捫葛上雲峯",
+              sound: "문갈상운봉",
+              words: [
+                { char: "捫", sound: "문", hun: "어루만질 문", desc: "손으로 어루만지다, 단단히 잡다", role: "넝쿨을 잡는 손길" },
+                { char: "葛", sound: "갈", hun: "칡 갈", desc: "바위에 드리운 굵은 칡넝쿨", role: "오르는 밧줄" },
+                { char: "上", sound: "상", hun: "오를 상", desc: "높은 곳으로 힘차게 오르다", role: "정상을 향한 전진" },
+                { char: "雲", sound: "운", hun: "구름 운", desc: "하늘에 뭉게뭉게 피어난 흰 구름", role: "아득한 높이" },
+                { char: "峯", sound: "봉", hun: "봉우리 봉", desc: "구름을 뚫고 솟은 드높은 묏부리", role: "목적지 산봉우리" }
+              ],
+              meaning: "굵은 칡넝쿨을 휘어잡고 구름 솟은 봉우리에 오르니,"
+            },
+            line2: {
+              hanja: "平觀世界空",
+              sound: "평관세계공",
+              words: [
+                { char: "平", sound: "평", hun: "평평할 평", desc: "눈높이를 나란히 하여 넓게", role: "탁 트인 시선" },
+                { char: "觀", sound: "관", hun: "볼 관", desc: "자세히 바라보고 관찰하다", role: "세상을 관조함" },
+                { char: "世", sound: "세", hun: "세상 세", desc: "인간 세상, 온 누리", role: "우리가 사는 세상" },
+                { char: "界", sound: "계", hun: "지경 계", desc: "경계, 지평선 너머의 공간", role: "넓은 대지" },
+                { char: "空", sound: "공", hun: "빌 공", desc: "맑고 텅 비어 집착이 없다", role: "비워진 맑은 마음" }
+              ],
+              meaning: "탁 트인 시선으로 내려다보는 온 세상이 텅 비어 고요하구나."
+            }
+          },
+          {
+            step: 2,
+            title: "제2연 (함련 頷聯)",
+            subtitle: "천 개의 산봉우리는 손바닥 위요, 세상 만사 가슴속에서 시원하게 트이다",
+            keyword: "손바닥 위의 산들 & 가슴 트임",
+            image: "assets/images/wunbong2.svg",
+            prompt: "Traditional East Asian ink-wash illustration, storybook style for children. Panoramic view from high mountain peak, endless rolling mountain ridges resembling miniature hills on a giant open palm in deep blue sky. Scholar boy with open arms exhales freely in pure mountain breeze.",
+            storyExplanation: "<strong>🔑 눈도장 장면 연상 포인트:</strong> 첩첩이 이어진 천 개의 산봉우리들이 마치 내 손바닥 위에 올려놓은 미니어처처럼 한눈에 보이고, 팔을 활짝 벌린 소년의 가슴속에서 세상의 모든 번뇌와 답답함이 시원하게 탁 트이는 통쾌한 장면이에요!",
+            fullMeaning: "수많은 산봉우리 손바닥 위처럼 한눈에 나뉘어 보이고, 세상의 온갖 복잡한 일 가슴속에서 시원하게 트이네.",
+            soundLine: "천산분장상 만사활흉중",
+            line1: {
+              hanja: "千山分掌上",
+              sound: "천산분장상",
+              words: [
+                { char: "千", sound: "천", hun: "일천 천", desc: "수많은, 겹겹이 이어진", role: "수많은 산세" },
+                { char: "山", sound: "산", hun: "뫼 산", desc: "산봉우리와 험한 능선들", role: "자연의 웅장함" },
+                { char: "分", sound: "분", hun: "나눌 분", desc: "뚜렷하게 갈라져 훤히 보이다", role: "명확한 조망" },
+                { char: "掌", sound: "장", hun: "손바닥 장", desc: "사람의 손바닥", role: "비유의 대상" },
+                { char: "上", sound: "상", hun: "위 상", desc: "손바닥의 훤한 위", role: "한눈에 들어옴" }
+              ],
+              meaning: "천 개의 겹겹 산봉우리 손바닥 위에 올려놓은 듯 훤히 나뉘고,"
+            },
+            line2: {
+              hanja: "萬事豁胷中",
+              sound: "만사활흉중",
+              words: [
+                { char: "萬", sound: "만", hun: "일만 만", desc: "세상의 수많은, 모든", role: "세간의 모든 번뇌" },
+                { char: "事", sound: "사", hun: "일 사", desc: "온갖 일과 걱정거리", role: "속세의 일들" },
+                { char: "豁", sound: "활", hun: "트일 활", desc: "시원하게 뻥 뚫리고 활짝 열리다", role: "시원한 해방감" },
+                { char: "胷", sound: "흉", hun: "가슴 흉", desc: "가슴 (흉'胸'의 옛 글자)", role: "마음의 중심" },
+                { char: "中", sound: "중", hun: "가운데 중", desc: "가슴속, 마음 깊은 곳", role: "내면의 평화" }
+              ],
+              meaning: "세상의 모든 복잡한 일들이 가슴속에서 시원하게 탁 트이네."
+            }
+          },
+          {
+            step: 3,
+            title: "제3연 (경련 頸聯)",
+            subtitle: "탑 그림자는 햇살 가에 흰 눈 같고, 솔바람 소리는 높은 하늘 바람 같네",
+            keyword: "눈빛 탑 그림자 & 하늘 솔바람",
+            image: "assets/images/wunbong3.svg",
+            prompt: "Traditional East Asian ink-wash illustration, storybook style for children. Ancient Korean stone pagoda glowing brilliantly white like snow near radiant sun on a mountain summit, majestic ancient pine tree singing with sweeping mountain wind under high blue sky.",
+            storyExplanation: "<strong>🔑 눈도장 장면 연상 포인트:</strong> 절 마당의 하얀 석탑이 높은 산의 찬란한 햇살을 받아 순백의 눈처럼 반짝이고, 천 길 바위틈에 선 늙은 소나무가 바람을 맞아 마치 하늘 한가운데서 천상의 음악을 연주하듯 '솨아-' 소리를 내는 신비로운 풍경이에요!",
+            fullMeaning: "탑 그림자는 햇살 가에 흰 눈처럼 서려 있고, 솔바람 소리는 하늘 한가운데 바람처럼 울리네.",
+            soundLine: "탑영일변설 송성천반풍",
+            line1: {
+              hanja: "塔影日邊雪",
+              sound: "탑영일변설",
+              words: [
+                { char: "塔", sound: "탑", hun: "탑 탑", desc: "절 마당의 고요한 석탑", role: "사찰의 상징" },
+                { char: "影", sound: "영", hun: "그림자 영", desc: "탑의 모습과 비치는 그림자", role: "맑은 형상" },
+                { char: "日", sound: "일", hun: "날 일 / 해 일", desc: "하늘 높이 비치는 밝은 해", role: "빛의 근원" },
+                { char: "邊", sound: "변", hun: "가 변", desc: "해 언저리, 햇살 닿는 곳", role: "빛나는 위치" },
+                { char: "雪", sound: "설", hun: "눈 설", desc: "순백의 눈처럼 깨끗하고 희다", role: "눈부신 순백" }
+              ],
+              meaning: "높은 탑의 그림자는 햇살 가에 흰 눈처럼 빛나고,"
+            },
+            line2: {
+              hanja: "松聲天半風",
+              sound: "송성천반풍",
+              words: [
+                { char: "松", sound: "송", hun: "소나무 송", desc: "바위틈에 우뚝 선 푸른 노송", role: "꿋꿋한 기상" },
+                { char: "聲", sound: "성", hun: "소리 성", desc: "바람결에 스치는 솔잎 소리", role: "자연의 음악" },
+                { char: "天", sound: "천", hun: "하늘 천", desc: "푸르고 드높은 하늘", role: "광활한 공간" },
+                { char: "半", sound: "반", hun: "반 반", desc: "하늘 한가운데, 높은 공중", role: "드높은 위치" },
+                { char: "風", sound: "풍", hun: "바람 풍", desc: "시원하고 웅장한 천상의 바람", role: "솔바람의 울림" }
+              ],
+              meaning: "우듬지 솔바람 소리는 하늘 한가운데서 부는 바람처럼 웅장하네."
+            }
+          },
+          {
+            step: 4,
+            title: "제4연 (미련 尾聯)",
+            subtitle: "안개와 노을은 응당 나를 비웃으리, 걸음 돌려 다시 속세의 새장으로 들어가니",
+            keyword: "노을의 웃음 & 속세의 새장",
+            image: "assets/images/wunbong4.svg",
+            prompt: "Traditional East Asian ink-wash illustration, storybook style for children. Beautiful purple-rose twilight sunset mist over mountains, young Korean scholar with travel pack pausing on mountain path looking back with gentle smile, valley below with distant town roofs in soft dust.",
+            storyExplanation: "<strong>🔑 눈도장 장면 연상 포인트:</strong> 구름 위 신선 같은 운봉사를 떠나 다시 속세의 일상으로 발길을 돌리는 소년 선비의 모습이에요. 저녁노을과 산안개가 '왜 그 맑은 산을 두고 다시 먼지투성이 새장(속세)으로 가니?'라며 웃는 듯한 깊은 시적 여운을 전해줍니다.",
+            fullMeaning: "산안개와 저녁노을은 응당 나를 비웃겠지, 걸음 돌려 다시 속세의 티끌 새장 속으로 들어가니.",
+            soundLine: "연하응소아 회보입진롱",
+            line1: {
+              hanja: "煙霞應笑我",
+              sound: "연하응소아",
+              words: [
+                { char: "煙", sound: "연", hun: "연기 연", desc: "산골짜기에 피어오르는 안개", role: "신비로운 자연" },
+                { char: "霞", sound: "하", hun: "노을 하", desc: "하늘을 붉게 물들이는 저녁노을", role: "아름다운 풍광" },
+                { char: "應", sound: "응", hun: "응할 응 / 마땅 응", desc: "마땅히, 응당 ~하리라", role: "자연의 마음 짐작" },
+                { char: "笑", sound: "소", hun: "웃을 소", desc: "빙그레 미소 짓다, 비웃다", role: "자연의 다정한 꾸짖음" },
+                { char: "我", sound: "아", hun: "나 아", desc: "시인 최치원 자신", role: "성찰하는 주체" }
+              ],
+              meaning: "곱게 물든 산안개와 저녁노을은 응당 나를 비웃으리라,"
+            },
+            line2: {
+              hanja: "廻步入塵籠",
+              sound: "회보입진롱",
+              words: [
+                { char: "廻", sound: "회", hun: "돌 회", desc: "발길을 돌리다 (돌아올 回의 본자)", role: "하산하는 발걸음" },
+                { char: "步", sound: "보", hun: "걸음 보", desc: "천천히 딛는 걸음걸이", role: "아쉬운 하산" },
+                { char: "入", sound: "입", hun: "들 입", desc: "다시 안으로 들어가다", role: "현실로 복귀" },
+                { char: "塵", sound: "진", hun: "티끌 진", desc: "번잡하고 어지러운 속세의 먼지", role: "인간 세상의 티끌" },
+                { char: "籠", sound: "롱", hun: "새장 롱 / 대바구니 롱", desc: "새장, 굴레 (塵籠: 속세의 굴레)", role: "답답한 현실 세상" }
+              ],
+              meaning: "발걸음 돌려 다시 먼지 자욱한 속세의 새장 속으로 들어가니."
+            }
+          }
+        ]
       }
     };
 
@@ -2698,6 +2855,7 @@
       document.getElementById('btnPoemWooheung').classList.toggle('active', poemId === 'wooheung');
       document.getElementById('btnPoemChokgyu').classList.toggle('active', poemId === 'chokgyu');
       document.getElementById('btnPoemGangnam').classList.toggle('active', poemId === 'gangnam');
+      document.getElementById('btnPoemWunbong').classList.toggle('active', poemId === 'wunbong');
 
       // Update Story Tab
       document.getElementById('storyPoemHeader').innerText = poem.storyHeader;
@@ -2729,6 +2887,11 @@
     document.getElementById('btnPoemGangnam').addEventListener('click', () => {
       sound.playTap();
       if (currentPoemId !== 'gangnam') setPoem('gangnam');
+    });
+
+    document.getElementById('btnPoemWunbong').addEventListener('click', () => {
+      sound.playTap();
+      if (currentPoemId !== 'wunbong') setPoem('wunbong');
     });
 
     /* Step Pills Render */

@@ -1,5 +1,5 @@
 // Service Worker for 최치원 오언시 눈도장 한시 암기 PWA
-const CACHE_NAME = 'choi-chiwon-poems-v5';
+const CACHE_NAME = 'choi-chiwon-poems-v6';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -20,13 +20,17 @@ const ASSETS_TO_CACHE = [
   './assets/images/gangnam3.jpg',
   './assets/images/gangnam4.jpg',
   './assets/images/gangnam5.jpg',
-  './assets/images/gangnam6.jpg'
+  './assets/images/gangnam6.jpg',
+  './assets/images/wunbong1.svg',
+  './assets/images/wunbong2.svg',
+  './assets/images/wunbong3.svg',
+  './assets/images/wunbong4.svg'
 ];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[Service Worker] Pre-caching offline assets for all 3 poems (v4)');
+      console.log('[Service Worker] Pre-caching offline assets for all 4 poems (v4)');
       return cache.addAll(ASSETS_TO_CACHE).catch((err) => {
         console.warn('[Service Worker] Caching error:', err);
       });

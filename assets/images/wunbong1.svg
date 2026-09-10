@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="skyGrad1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8ECF2"/>
+      <stop offset="45%" stop-color="#F2E6D5"/>
+      <stop offset="80%" stop-color="#DFC4A3"/>
+      <stop offset="100%" stop-color="#B89574"/>
+    </linearGradient>
+    <linearGradient id="cloudGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#EAE3D2" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="cliffGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2D3A30"/>
+      <stop offset="60%" stop-color="#3F4D41"/>
+      <stop offset="100%" stop-color="#1E2620"/>
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF5E0" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#E59866" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1200" height="675" fill="url(#skyGrad1)"/>
+  
+  <!-- Subtle Soft Sun -->
+  <circle cx="850" cy="220" r="140" fill="url(#sunGrad)"/>
+
+  <!-- Distant mountain peaks in mist -->
+  <path d="M0 460 Q 200 350 400 420 T 800 380 Q 1000 330 1200 440 L 1200 675 L 0 675 Z" fill="#9BAFA0" opacity="0.45"/>
+  <path d="M150 490 Q 380 380 620 440 T 1100 410 L 1200 675 L 0 675 Z" fill="#6A8070" opacity="0.6"/>
+
+  <!-- Sea of Clouds (雲海) -->
+  <path d="M-50 480 Q 120 430 300 470 T 700 440 Q 950 420 1250 470 L 1250 675 L -50 675 Z" fill="url(#cloudGrad)"/>
+  <path d="M-50 530 Q 200 480 450 520 T 950 490 Q 1100 480 1250 530 L 1250 675 L -50 675 Z" fill="#FBF8F2" opacity="0.8"/>
+
+  <!-- Dramatic Cloud Peak Cliff on Left (雲峯) -->
+  <path d="M-20 200 L 280 260 L 360 410 L 290 560 L 420 675 L 0 675 Z" fill="url(#cliffGrad)"/>
+  <path d="M120 230 L 250 250 L 320 390 L 260 520 L 340 675 L 100 675 Z" fill="#3B493D" opacity="0.6"/>
+
+  <!-- Temple Pavilion on the Highest Peak (雲峯寺) -->
+  <g transform="translate(190, 195) scale(0.75)">
+    <!-- Temple Base -->
+    <rect x="0" y="55" width="90" height="25" fill="#5A4738" rx="3"/>
+    <!-- Columns -->
+    <rect x="10" y="30" width="8" height="28" fill="#8C3A27"/>
+    <rect x="40" y="30" width="8" height="28" fill="#8C3A27"/>
+    <rect x="72" y="30" width="8" height="28" fill="#8C3A27"/>
+    <!-- Traditional Curved Eaves Roof -->
+    <path d="M-15 32 Q 45 15 105 32 L 85 10 Q 45 5 5 10 Z" fill="#202A24"/>
+    <path d="M-8 30 Q 45 16 98 30 L 80 12 Q 45 8 10 12 Z" fill="#B93826"/>
+    <!-- Pagoda Finial -->
+    <rect x="42" y="0" width="6" height="10" fill="#B4842E"/>
+    <circle cx="45" cy="0" r="4" fill="#B4842E"/>
+  </g>
+
+  <!-- Hanging Wild Ivy Vines (捫葛 - 칡넝쿨) -->
+  <path d="M260 250 Q 280 340 240 430 T 290 580" fill="none" stroke="#463523" stroke-width="7" stroke-linecap="round"/>
+  <path d="M255 270 Q 240 330 255 410 T 260 540" fill="none" stroke="#63513B" stroke-width="4" stroke-linecap="round"/>
+  <!-- Ivy Leaves -->
+  <g fill="#435E43" opacity="0.9">
+    <ellipse cx="265" cy="300" rx="9" ry="14" transform="rotate(25 265 300)"/>
+    <ellipse cx="240" cy="340" rx="10" ry="16" transform="rotate(-35 240 340)"/>
+    <ellipse cx="270" cy="380" rx="11" ry="15" transform="rotate(40 270 380)"/>
+    <ellipse cx="235" cy="425" rx="12" ry="17" transform="rotate(-20 235 425)"/>
+    <ellipse cx="280" cy="480" rx="10" ry="15" transform="rotate(30 280 480)"/>
+    <ellipse cx="255" cy="520" rx="11" ry="16" transform="rotate(-15 255 520)"/>
+  </g>
+
+  <!-- Young Scholar Boy Climbing holding the Vine (捫葛) -->
+  <g transform="translate(230, 370) scale(0.9)">
+    <!-- Boy Body (Hanbok) -->
+    <path d="M15 35 Q 25 70 35 95 L 0 95 Q 5 65 15 35 Z" fill="#F0EBE1" stroke="#3C483F" stroke-width="2"/>
+    <!-- Blue Vest -->
+    <path d="M12 36 Q 20 60 28 80 L 8 80 Q 8 58 12 36 Z" fill="#2B5B84"/>
+    <!-- Arms reaching up holding the vine -->
+    <path d="M18 42 L 32 15 L 26 13 L 14 38 Z" fill="#F0EBE1" stroke="#3C483F" stroke-width="1.5"/>
+    <circle cx="32" cy="14" r="5" fill="#E8B896"/> <!-- Hand gripping vine -->
+    <!-- Head and Topknot (상투) -->
+    <circle cx="18" cy="22" r="13" fill="#E8B896"/>
+    <!-- Boy Hair / Headband -->
+    <path d="M8 18 Q 18 10 28 18 Q 24 8 12 10 Z" fill="#1C1D1F"/>
+    <rect x="15" y="4" width="7" height="9" fill="#1C1D1F" rx="3"/>
+    <circle cx="18.5" cy="3" r="3" fill="#B93826"/>
+    <!-- Smiling profile looking upward -->
+    <circle cx="25" cy="20" r="2" fill="#1C1D1F"/>
+    <path d="M24 26 Q 28 27 26 30" fill="none" stroke="#B93826" stroke-width="1.5"/>
+  </g>
+
+  <!-- Pine tree framing top left -->
+  <path d="M-10 120 Q 80 140 160 110 Q 220 90 280 130" fill="none" stroke="#382C22" stroke-width="14" stroke-linecap="round"/>
+  <!-- Pine Needles clusters -->
+  <g fill="#273C2C">
+    <circle cx="150" cy="100" r="32" opacity="0.9"/>
+    <circle cx="180" cy="90" r="36" opacity="0.95"/>
+    <circle cx="240" cy="115" r="38" opacity="0.9"/>
+    <circle cx="285" cy="135" r="30" opacity="0.85"/>
+  </g>
+
+  <!-- Flowing mist ribbons -->
+  <path d="M300 480 C 450 440, 600 520, 850 460 C 1000 420, 1150 480, 1250 450" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="round" opacity="0.6"/>
+  <path d="M220 540 C 400 510, 580 570, 800 520 C 1020 480, 1120 530, 1250 510" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" opacity="0.45"/>
+
+  <!-- Chinese Characters Seal Stamp -->
+  <rect x="1100" y="45" width="55" height="55" fill="#B93826" rx="8"/>
+  <text x="1127" y="80" font-family="'Noto Serif KR', serif" font-size="28" font-weight="900" fill="#FFFFFF" text-anchor="middle">峯</text>
+  <text x="1127" y="125" font-family="'Gowun Batang', serif" font-size="16" font-weight="700" fill="#5A4738" text-anchor="middle">雲峯</text>
+</svg>
