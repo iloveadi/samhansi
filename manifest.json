@@ -1,0 +1,31 @@
+{
+  "name": "최치원 오언시 눈도장 한시 암기",
+  "short_name": "눈도장 한시",
+  "description": "최치원의 오언 명시를 시각적 눈도장 장면 연상과 리듬 챈트로 쉽게 외우는 어린이 눈도장 PWA",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FAF6F0",
+  "theme_color": "#3C483F",
+  "icons": [
+    {
+      "src": "assets/images/icon-192.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-512.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
