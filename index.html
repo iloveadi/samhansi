@@ -1862,16 +1862,23 @@
   <canvas id="confettiCanvas"></canvas>
 
   <div class="app-container">
-    <!-- Header -->
-    <header class="app-header">
-      <div class="brand-area">
+    <!-- Unified Single App Header & Poem Selector -->
+    <header class="app-header" id="appHeader">
+      <div class="brand-area" id="btnOpenPoemDrawer" style="cursor: pointer;" title="전체 시 목록 열기">
         <div class="brand-seal" id="appSeal">寓</div>
         <div class="brand-titles">
-          <h1 id="appHeaderTitle">최치원 &lt;우흥(寓興)&gt; <span style="font-size: 0.8rem; font-weight: normal; color: var(--seal-red); background: var(--seal-red-light); padding: 2px 7px; border-radius: 99px;">눈도장 암기</span></h1>
-          <p id="appHeaderSubtitle">오언율시(五言律詩) · 시각 연상과 리듬 챈트</p>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <h1 id="appHeaderTitle" style="font-size: 1.15rem; font-weight: 700; color: var(--sage-primary);">1. 우흥 (寓興)</h1>
+            <span id="appHeaderBadge" class="banner-badge" style="font-size: 0.72rem; font-weight: 700; color: var(--gold-point); background: var(--gold-light); border: 1px solid #ECD7A5; padding: 2px 7px; border-radius: 99px;">4연 8구</span>
+          </div>
+          <p id="appHeaderSubtitle" style="font-size: 0.78rem; color: var(--ink-muted); margin-top: 2px;">최치원 오언율시 · 눈도장 한시 암기</p>
         </div>
       </div>
       <div class="header-actions">
+        <button class="btn-open-drawer" id="btnOpenDrawerBtn" type="button" title="전체 한시 목록 열기">
+          <span>📜 시 목록 (<span id="totalPoemCount">4</span>)</span>
+          <span class="drawer-arrow">▾</span>
+        </button>
         <button id="btnMuteToggle" class="btn-icon-round" title="챈트 장단음 효과음 켜기/끄기">
           <span id="soundIcon">🔔</span>
         </button>
@@ -1881,30 +1888,10 @@
       </div>
     </header>
 
-    <!-- Dynamic Poem Selector & Library Drawer Trigger -->
-    <section class="poem-selector-wrapper" aria-label="한시 선택">
-      <div class="current-poem-banner" id="btnOpenPoemDrawer" title="전체 시 목록 열기">
-        <div class="banner-left">
-          <div class="banner-seal" id="bannerSeal">寓</div>
-          <div class="banner-text">
-            <div class="banner-title-row">
-              <span class="banner-title" id="bannerPoemTitle">1. 우흥 (寓興)</span>
-              <span class="banner-badge" id="bannerStanzaCount">4연 8구</span>
-            </div>
-            <span class="banner-desc" id="bannerPoemSubtitle">오언율시 · 시각 연상과 리듬 챈트</span>
-          </div>
-        </div>
-        <button class="btn-open-drawer" id="btnOpenDrawerBtn" type="button">
-          <span>📜 시 목록 (<span id="totalPoemCount">4</span>)</span>
-          <span class="drawer-arrow">▾</span>
-        </button>
-      </div>
-
-      <!-- Quick Scrollable Chips for Fast Swiping -->
-      <div class="poem-chips-scroll" id="poemChipsScroll">
-        <!-- Dynamically rendered from window.ALL_POEMS -->
-      </div>
-    </section>
+    <!-- Quick Scrollable Chips for Fast Swiping (1줄 횡스크롤 칩) -->
+    <div class="poem-chips-scroll" id="poemChipsScroll">
+      <!-- Dynamically rendered from window.ALL_POEMS -->
+    </div>
 
     <!-- Navigation Tabs -->
     <nav class="mode-nav">
@@ -1951,14 +1938,7 @@
           <div class="image-tag-overlay">
             <span id="sceneStepTag">제1연 (수련)</span>
           </div>
-          <div class="image-actions-overlay">
-            <button class="btn-glass" id="btnZoomImage" title="그림 크게 보기">
-              🔍 크게보기
-            </button>
-            <button class="btn-glass" id="btnCopyPrompt" title="AI 그림 프롬프트 복사하기">
-              📋 프롬프트 복사
-            </button>
-          </div>
+
         </div>
 
         <!-- Scene Body -->
@@ -2222,11 +2202,7 @@
     </div>
   </div>
 
-  <!-- Lightbox Zoom Modal -->
-  <div class="lightbox-modal" id="lightboxModal">
-    <button class="btn-lightbox-close" id="btnCloseLightbox">&times;</button>
-    <img id="lightboxImg" class="lightbox-img" src="" alt="확대 일러스트">
-  </div>
+
 
   <!-- Toast Popup -->
   <div class="toast-popup" id="toastPopup">
@@ -2448,8 +2424,6 @@
     const btnPrevStep = document.getElementById('btnPrevStep');
     const btnNextStep = document.getElementById('btnNextStep');
     const btnSpeakScene = document.getElementById('btnSpeakScene');
-    const btnZoomImage = document.getElementById('btnZoomImage');
-    const btnCopyPrompt = document.getElementById('btnCopyPrompt');
     const versesContainer = document.getElementById('versesContainer');
     const quizStepSelectGroup = document.getElementById('quizStepSelectGroup');
 
@@ -2543,21 +2517,14 @@
       currentPoemId = poemId;
       const poem = getCurrentPoem();
 
-      // Update Header
+      // Update Single Unified Header
       appSeal.innerText = poem.sealChar;
-      appHeaderTitle.innerHTML = `최치원 &lt;${poem.title}&gt; <span style="font-size: 0.8rem; font-weight: normal; color: var(--seal-red); background: var(--seal-red-light); padding: 2px 7px; border-radius: 99px;">눈도장 암기</span>`;
-      appHeaderSubtitle.innerText = poem.subtitle;
-
-      // Update Top Selector Banner
-      const bannerSeal = document.getElementById('bannerSeal');
-      const bannerPoemTitle = document.getElementById('bannerPoemTitle');
-      const bannerStanzaCount = document.getElementById('bannerStanzaCount');
-      const bannerPoemSubtitle = document.getElementById('bannerPoemSubtitle');
-
-      if (bannerSeal) bannerSeal.innerText = poem.sealChar;
-      if (bannerPoemTitle) bannerPoemTitle.innerText = poem.title;
-      if (bannerStanzaCount) bannerStanzaCount.innerText = `${poem.steps.length}연 ${poem.steps.length * 2}구`;
-      if (bannerPoemSubtitle) bannerPoemSubtitle.innerText = poem.subtitle;
+      appHeaderTitle.innerText = poem.title;
+      const appHeaderBadge = document.getElementById('appHeaderBadge');
+      if (appHeaderBadge) {
+        appHeaderBadge.innerText = `${poem.steps.length}연 ${poem.steps.length * 2}구`;
+      }
+      appHeaderSubtitle.innerText = `최치원 ${poem.subtitle}`;
 
       // Update Quick Chips and Drawer active states
       renderPoemSelectors();
@@ -2708,33 +2675,7 @@
       }
     });
 
-    /* Lightbox & Copy Prompt */
-    btnZoomImage.addEventListener('click', () => {
-      sound.playTap();
-      const poem = getCurrentPoem();
-      const curData = poem.steps.find(d => d.step === currentStep);
-      document.getElementById('lightboxImg').src = curData.image;
-      document.getElementById('lightboxModal').classList.add('open');
-    });
-    document.getElementById('btnCloseLightbox').addEventListener('click', () => {
-      document.getElementById('lightboxModal').classList.remove('open');
-    });
-    document.getElementById('lightboxModal').addEventListener('click', (e) => {
-      if (e.target.id === 'lightboxModal') {
-        document.getElementById('lightboxModal').classList.remove('open');
-      }
-    });
 
-    btnCopyPrompt.addEventListener('click', () => {
-      sound.playTap();
-      const poem = getCurrentPoem();
-      const curData = poem.steps.find(d => d.step === currentStep);
-      navigator.clipboard.writeText(curData.prompt).then(() => {
-        showToast("🎨 AI 그림 프롬프트가 복사되었습니다!");
-      }).catch(() => {
-        showToast("프롬프트 복사에 실패했습니다.");
-      });
-    });
 
     /* Step Navigation */
     btnPrevStep.addEventListener('click', () => {

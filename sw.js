@@ -1,5 +1,5 @@
 // Service Worker for 최치원 오언시 눈도장 한시 암기 PWA
-const CACHE_NAME = 'choi-chiwon-poems-v7';
+const CACHE_NAME = 'choi-chiwon-poems-v8';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
